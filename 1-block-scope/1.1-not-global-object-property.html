@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>let声明不属于window顶层对象属性的全局变量</title>
+</head>
+<body>
+  <script>
+    // 1. 声明变量时使用与不使用var关键字的区别
+    var a = 'a'     // 使用var关键字声明，表示在当前作用域内声明一个变量
+    // delete a        // delete不能删除变量
+    console.log(a)  // 输出a
+    b = 'b'         // 不使用var关键字声明，表示在顶层对象添加一个属性
+    // delete b        // delete只能删除对象的属性
+    console.log(b)  // 报错，b is not defined
+
+    // 2. JavaScript最初的设计纰漏：在当前作用域中声明的变量同时会被添加到上下文对象作为属性，导致污染上下文对象
+    var c = 'c'
+    console.log(window.c) // c应该是一个全局变量，但因为JavaScript最初的设计纰漏导致c变量被添加到了顶层对象作为属性存在
+    d = 'd'
+    console.log(window.d) // d是添加到顶层对象(window)的一个属性
+
+    // 3. let关键字弥补了var关键字上述的问题
+    let e = 'e'
+    console.log(e)        // 在当前作用域中声明一个变量
+    console.log(window.e) // 不会作为当前作用域中上下文对象的属性存在
+  </script>
+</body>
+</html>

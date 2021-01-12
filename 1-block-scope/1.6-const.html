@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>const关键字</title>
+</head>
+<body>
+  <script>
+    // ES5声明常量
+    Object.defineProperty(window, 'a', {
+      value: 'a',     // 设置该属性的值
+      writable: false // 设置该属性的值不能写
+    })
+
+    console.log(a)    // 输出a
+    a = 'b'
+    console.log(a)    // 输出a
+
+    // ES6声明常量
+    const c = 'c'
+    console.log(c)    // 输出c
+    c = 'd'
+    console.log(c)    // 报错，TypeError: Assignment to constant variable.
+
+    // 使用const关键字声明常量时，必须初始化值
+    const e           // 报错，SyntaxError: Missing initializer in const declaration
+    e = 'e'
+
+    // const关键字声明的常量也存在块级作用域
+    if (true) {
+      const f = 'f'
+    }
+    console.log(f)    // 报错，ReferenceError: f is not defined
+
+    // const关键字声明的常量也存在暂时性死区
+    if (true) {
+      console.log(g)  // 报错，ReferenceError: Cannot access 'g' before initialization
+      const g = 'g'
+    }
+  </script>
+</body>
+</html>
