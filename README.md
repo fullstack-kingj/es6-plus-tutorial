@@ -8,12 +8,6 @@
 
 ## 专栏目录
 
-- 块级作用域
-  - [let 关键字声明的变量不属于顶级对象的属性](./1-block-scope/1.1-not-global-object-property.html)
-  - [let 关键字声明的变量不允许重复声明](./1-block-scope/1.2-not-allow-redeclarations.js)
-  - [let 关键字声明的变量不允许变量提升](./1-block-scope/1.3-not-allow-variable-hoisting.js)
-  - [暂时性死区（*Temporal dead zone*）](./1-block-scope/1.4-temporal-dead-zone.js)
-  - [块级作用域](./1-block-scope/1.5-block-scope.js)
-  - [const 关键字声明常量](./1-block-scope/1.6-const.html)
-  - [const 关键字声明对象或数组类型的常量](./1-block-scope/1.7-const-object-and-array.js)
-- 解构赋值
+1. [let关键字：ES6新增的var关键字加强版](1-let/README.md)
+2. [const关键字：终于拥有真正的常量声明语句](2-const/README.md)
+

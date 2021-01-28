@@ -1,4 +1,4 @@
-// 1. var关键字声明的变量是允许变量提升的
+// var关键字声明的变量是允许变量提升的
 // console.log(a); // 报错，ReferenceError: a is not defined
 
 // console.log(b); // 输出undefined

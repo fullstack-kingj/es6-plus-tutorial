@@ -9,7 +9,7 @@
 // 2. 暂时性死区的过程
 // if (true) {
 //   // 暂时性死区开始
-//   console.log(b); // 报错，ReferenceError: Cannot access 'a' before initialization
+//   console.log(b); // 报错，ReferenceError: Cannot access 'b' before initialization
 
 //   let b;
 //   // 暂时性死区结束
